@@ -29,13 +29,23 @@ turret -
 
 # Controls
 Although the player is positioned horizontally, it uses standard WASD controls along with some extra keys.
+
 W - forward
+
 A - left
+
 S - reverse
+
 D - right
+
 E - forward right
+
 Q - forward left
+
 C - reverse right
+
 Z - reverse left
+
 ENTER - shoot
+
 SPACE - shoot
