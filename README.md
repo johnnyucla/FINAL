@@ -8,14 +8,23 @@ This project should be complete in terms of functionality.  It lacks sophisticat
 # Classes
 basehealth - Keeps a record of the base health.
 button - 
+
 enemy - 
+
 game - 
+
 health - 
+
 instr - 
+
 player - 
+
 rocket - 
+
 score - 
+
 shell - 
+
 turret - 
 
 # Controls
