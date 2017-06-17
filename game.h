@@ -39,6 +39,7 @@ class Game : public QGraphicsView
         void mousePressEvent(QMouseEvent* event);
         void mouseMoveEvent(QMouseEvent* event);*/
         void displayMenu();
+        void gameOver();
     public slots:
         void start();
         void end();

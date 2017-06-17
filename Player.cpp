@@ -8,6 +8,7 @@
 #include <QObject>
 #include "game.h"
 #include <qmath.h>
+#include "button.h"
 
 extern Game* game;
 
@@ -48,6 +49,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     {
         if(pos().x() + 100 < 1066)
         {
+            setRotation(00);
             setPos(x()+5,y());
         }
     }
@@ -55,6 +57,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     {
         if(pos().y() > 0)
         {
+            setRotation(15);
             setPos(x(),y()-5); //Grid inverted, must do -10 to go up.
         }
 
@@ -63,6 +66,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     {
         if(pos().y()+100 < 600)
         {
+            setRotation(-15);
             setPos(x(),y()+5);
         }
     }
@@ -131,8 +135,16 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 void Player::mousePressEvent(QMouseEvent *event)
 {
-    fire();
-
+    emit clicked();
+    if(event->button() == Qt::LeftButton)
+    {
+        fire();
+    }
+   /* Button* fire = new Button(QString("  "));
+    int quit_x = 300;
+    int quit_y = 300;
+     fire->setPos(quit_x,quit_y);
+    connect(fire,SIGNAL(clicked()),this,SLOT(fire()));*/
 }
 
 void Player::spawn()

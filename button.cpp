@@ -12,7 +12,7 @@ Button::Button(QString name, QGraphicsItem *parent) : QObject(), QGraphicsRectIt
     //Change the color.
     QBrush brush;
     brush.setStyle(Qt::SolidPattern);
-    brush.setColor(Qt::white);
+    brush.setColor(Qt::gray);
     setBrush(brush);
 
     //Draw text

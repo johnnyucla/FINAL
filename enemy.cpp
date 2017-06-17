@@ -43,17 +43,18 @@ void Enemy::move()
     //game->health->checkHealth();
 
     //Move the enemy down.
-    setPos(x(),y()+5); //Don't forget, to go up, need to -10, not +10
-
+    setPos(x(),y()+5); //Don't forget, to go up, need to -10, not +10.
 
     if (pos().y() > 600)    //If the enemy ships reach the bottom
     {
         //Decrease the player health.
         game->b_health->baseHealthdecrease();
-
-
         scene()->removeItem(this);
         delete this;
+        if (game->b_health->getBaseHealth() == 0)
+        {
+            game->gameOver();
+        }
     }
 
     else   //If you and the enemy ship collide
@@ -76,8 +77,16 @@ void Enemy::move()
 
                 //This crashses the program
 
+                if (game->health->getHealth() == 0)
+                    {
+                        game->gameOver();
+                    }
+
                 return; //Crash fixed!
+
+
             }
+
             else if (typeid(*(ships[i])) == typeid(Turret))
             {
                 //Increase the score.
@@ -95,7 +104,13 @@ void Enemy::move()
                 //This crashses the program
 
                 return; //Crash fixed!
+
+                if (game->b_health->getBaseHealth() == 0)
+                {
+                    game->gameOver();
+                }
             }
         }
     }
+
 }

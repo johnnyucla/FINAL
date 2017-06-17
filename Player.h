@@ -18,6 +18,8 @@ class Player :  public QObject, public QGraphicsRectItem
         void mouseMoveEvent(QMouseEvent* event);
     public slots:
         void spawn();
+    signals:
+        void clicked();
 };
 
 #endif // PLAYER_H

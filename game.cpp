@@ -64,6 +64,52 @@ void Game::displayMenu()
     scene->addItem(quit_button);
 }
 
+void Game::gameOver()
+{
+    if (health->getHealth()==0)
+    {
+        QGraphicsTextItem* title = new QGraphicsTextItem(QString("You sunk! Game over!"));
+        QFont titleFont("consolas",50);
+        title->setFont(titleFont);
+
+        int title_x = this->width()/2 - title->boundingRect().width()/2;
+        int title_y = this->height()/2 - title->boundingRect().height()/2-100;
+        title->setPos(title_x,title_y);
+        scene->addItem(title);
+
+        //Quit button
+        Button* quit_button = new Button(QString("Quit"));
+        int quit_x = this->width()/2 - quit_button->boundingRect().width()/2;
+        int quit_y = this->height()/2 - quit_button->boundingRect().height()/2+72;
+        quit_button->setPos(quit_x,quit_y);
+
+        connect(quit_button,SIGNAL(clicked()),this,SLOT(close()));
+
+        scene->addItem(quit_button);
+    }
+    else if (b_health->getBaseHealth()==0)
+    {
+        QGraphicsTextItem* title = new QGraphicsTextItem(QString("Base destroyed! Game over!"));
+        QFont titleFont("consolas",50);
+        title->setFont(titleFont);
+
+        int title_x = this->width()/2 - title->boundingRect().width()/2;
+        int title_y = this->height()/2 - title->boundingRect().height()/2-100;
+        title->setPos(title_x,title_y);
+        scene->addItem(title);
+
+        //Quit button
+        Button* quit_button = new Button(QString("Quit"));
+        int quit_x = this->width()/2 - quit_button->boundingRect().width()/2;
+        int quit_y = this->height()/2 - quit_button->boundingRect().height()/2+72;
+        quit_button->setPos(quit_x,quit_y);
+
+        connect(quit_button,SIGNAL(clicked()),this,SLOT(close()));
+
+        scene->addItem(quit_button);
+    }
+}
+
 void Game::start()
 {
     scene->clear();
@@ -108,7 +154,6 @@ void Game::start()
     health = new Health();
     health->setPos(health->x(), health->y()+25);
     scene->addItem(health);
-
 
     //Spawn Enemies
     QTimer* timer = new QTimer();
