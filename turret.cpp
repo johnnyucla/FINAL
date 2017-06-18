@@ -13,7 +13,8 @@
 #include "enemy.h"
 #include <QGraphicsScene>
 
-/*I used QPointF, QPolygonF, and QLineF because they have member functions built in
+/*
+ * I used QPointF, QPolygonF, and QLineF because they have member functions built in
  * and are generally more precise because they use doubles.
  */
 
@@ -30,7 +31,7 @@ Turret::Turret(QGraphicsItem *parent) : QGraphicsRectItem(), QObject()
     QVector<QPointF> points;    //Has << overloaded as a push_back from console.
     points << QPoint(1,0) << QPoint(2,0) << QPoint(3,1)
            << QPoint(3,2) << QPoint(2,3) << QPoint(1,3)
-           << QPoint(0,2)<< QPoint(0,1);
+           << QPoint(0,2) << QPoint(0,1);
 
     //By default, a polygon is small.  Make it bigger.
     //Scale the points.

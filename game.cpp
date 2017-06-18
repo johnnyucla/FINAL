@@ -33,7 +33,7 @@ Game::Game(QWidget *parent) : QGraphicsView()
 
 void Game::displayMenu()
 {
-    QGraphicsTextItem* title = new QGraphicsTextItem(QString("PROTECT THE BASE!"));
+    QGraphicsTextItem* title = new QGraphicsTextItem(QString("BASE GUARD!"));
     QFont titleFont("consolas",50);
     title->setFont(titleFont);
 

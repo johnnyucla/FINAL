@@ -17,7 +17,8 @@
 #include <QGraphicsScene>
 #include "instr.h"
 
-/* By JOHNNY ODABASHYAN
+/*
+ * By JOHNNY ODABASHYAN
  * UCLA ID 104844369
  * PIC 10C SPRING 2017
  */

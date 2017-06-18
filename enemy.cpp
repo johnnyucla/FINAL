@@ -57,14 +57,14 @@ void Enemy::move()
         }
     }
 
-    else   //If you and the enemy ship collide
+    else   //If you (or the base) and the enemy ship collide
     {
         QList<QGraphicsItem *> ships = collidingItems();
         for (int i = 0, n = ships.size(); i < n; ++i)
         {
             if (typeid(*(ships[i])) == typeid(Player))
             {
-                //Increase the score.
+                //Decrease the health.
                 game->health->ramDecrease();
 
                 //Remove them both.
@@ -75,14 +75,12 @@ void Enemy::move()
 
                 delete this;
 
-                //This crashses the program
-
                 if (game->health->getHealth() == 0)
-                    {
-                        game->gameOver();
-                    }
+                {
+                    game->gameOver();
+                }
 
-                return; //Crash fixed!
+                return;
 
 
             }
@@ -101,14 +99,14 @@ void Enemy::move()
 
                 delete this;
 
-                //This crashses the program
-
-                return; //Crash fixed!
-
                 if (game->b_health->getBaseHealth() == 0)
                 {
                     game->gameOver();
                 }
+
+                return;
+
+
             }
         }
     }
