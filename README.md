@@ -5,27 +5,30 @@ My final project will be called Protect The Base. The objective of the game is t
 
 This project should be complete in terms of functionality.  It lacks sophisticated graphics, which displeases me as a self-proclaimed artist.  I will add these graphics as soon as I can.  The project is messy due to it being one of my very few experiences with Qt Creator.  However, I have learned a lot and am confident I can work on Qt at a faster pace.  
 
+The video of the project can be found here: https://drive.google.com/file/d/0B0teY8bJhJOzbmotNFphTU9YdE0/view
+
 # Classes
-basehealth - Keeps a record of the base health.
-button - 
+basehealth - keeps a record of the base health.
 
-enemy - 
+button - creates the play and quit buttons
 
-game - 
+enemy - the red rectangles
 
-health - 
+game - has the compenonents to run the game.
 
-instr - 
+health - ship's health
 
-player - 
+instr - supposed to show the keys the can be used int the game.
 
-rocket - 
+player - the playable ship
 
-score - 
+rocket - the objects that the turrets shoot
 
-shell - 
+score - tallies the amount of enemies sunk
 
-turret - 
+shell - the objects the player shoots
+
+turret - object that has a polygon that tracks enemies within its radius.
 
 # Controls
 Although the player is positioned horizontally, it uses standard WASD controls along with some extra keys.
